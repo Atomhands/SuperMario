@@ -8,8 +8,9 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.game.mario.screen.PlayScreen;
 
 public class SuperMario extends Game {
-	public static final int V_HEIGHT = 800;
-	public static final int V_WEIGHT = 480;
+	public static final int V_HEIGHT = 220;
+	public static final int V_WEIGHT = 400;
+	public static final float PPM = 100;
 	public SpriteBatch batch;
 
 	@Override

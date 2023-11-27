@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.game.mario.SuperMario;
@@ -37,7 +38,7 @@ public class Hud {
     Label marioLabel;
 
     public Hud(SpriteBatch batch){
-        worldTime = 180;
+        worldTime = 300;
         countTime = 0;
         score = 0;
         viewport = new FitViewport(SuperMario.V_WEIGHT,SuperMario.V_HEIGHT, new OrthographicCamera());
@@ -47,16 +48,16 @@ public class Hud {
         table.top();
         table.setFillParent(true);
 
-        countDownLabel = new Label(String.format("%3d",worldTime),new Label.LabelStyle(new BitmapFont(), Color.BLACK));
-        scoreLabel = new Label(String.format("%10d",score),new Label.LabelStyle(new BitmapFont(), Color.BLACK));
-        timeLabel = new Label("Time",new Label.LabelStyle(new BitmapFont(), Color.BLACK));
-        worldLabel = new Label("WORLD",new Label.LabelStyle(new BitmapFont(), Color.BLACK));
-        marioLabel = new Label("Mario",new Label.LabelStyle(new BitmapFont(), Color.BLACK));
-        levelLabel = new Label("1-1",new Label.LabelStyle(new BitmapFont(), Color.BLACK));
+        countDownLabel = new Label(String.format("%3d",worldTime),new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        scoreLabel = new Label(String.format("%10d",score),new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        timeLabel = new Label("Time",new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        worldLabel = new Label("WORLD",new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        marioLabel = new Label("Mario",new Label.LabelStyle(new BitmapFont(), Color.WHITE));
+        levelLabel = new Label("1-1",new Label.LabelStyle(new BitmapFont(), Color.WHITE));
         //表单平均分配在顶部(填充)
-        table.add(marioLabel).expandX().pad(25);
-        table.add(worldLabel).expandX().pad(25);
-        table.add(timeLabel).expandX().pad(25);
+        table.add(marioLabel).expandX().pad(5);
+        table.add(worldLabel).expandX().pad(5);
+        table.add(timeLabel).expandX().pad(5);
         //创建新行
         table.row();
         table.add(scoreLabel).expandX();
